@@ -71,7 +71,7 @@ header h1 a {
    display: block;
    /* padding-top: 29%; */
    width: 135px;height: 62px;
-   background: url(./img/ci.png) no-repeat center;
+   background: url(../img/ci.png) no-repeat center;
 }
 header #gnb {
    display: flex;gap: 90px;justify-content: center;
