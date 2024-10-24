@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <!-- css -->
+   <link rel="stylesheet" href="/css/reset.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.min.css">
+   <!-- <link rel="stylesheet" href="/css/main.css"> -->
+    <style>
+      .main_swiper {width: 100%;height: 100vh;overflow: hidden;border: 5px solid red;}
+    </style>
+   <!-- JS -->
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"
+      integrity="sha256-sw0iNNXmOJbQhYFuC9OF2kOlD5KQKe1y5lfBn4C9Sjg=" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body>
+   <div class="main_swiper">
+      <div class="swiper-wrapper">
+         <div class="swiper-slide">
+            <img src="./img/main2.jpg" alt="">
+            <!-- <strong>고객 만족의 가치를 실천하며,<br> 색다른 맛의 즐거움을 선물합니다</strong> -->
+         </div>
+         <div class="swiper-slide">
+            <img src="./img/main345.jpg" alt="">
+            <!-- <strong>팔도는 신선하고 좋은 품질을 위해,<br>안전한 식품 문화를 위해 노력합니다</strong> -->
+         </div>
+      </div>
+      <div class="swiper-pagination"></div>
+   </div>
+
+   <script>
+      const main = new Swwiper('.main_swiper', {
+         spaceBetween: 30,
+         effect: "fade",
+         autoplay: true,
+      })
+   </script>
+</body>
+</html>
