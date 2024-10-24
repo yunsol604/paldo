@@ -51,7 +51,7 @@
 .btn_goTop {
    position: fixed;right: 50px;bottom: 50px;z-index: 999;
    width: 58px;
-   background: #F9B8B9;
+   background: #559C17;
    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
    font-size: 50px;text-align: center;
 }
@@ -71,7 +71,7 @@ header h1 a {
    display: block;
    /* padding-top: 29%; */
    width: 135px;height: 62px;
-   background: url(/img/ci.png) no-repeat center;
+   background: url(./img/ci.png) no-repeat center;
 }
 header #gnb {
    display: flex;gap: 90px;justify-content: center;
@@ -276,7 +276,7 @@ footer .sns_wrap {
 .brand_story {
    margin: 200px 0;
    position: relative;height: 600px;
-   background: #F5EBDF url(/img/sub1-3-cont-img2수정2.png) no-repeat right bottom;
+   background: #F5EBDF url(../img/sub1-3-cont-img2수정2.png) no-repeat right bottom;
    color: #FFF;
 }
 .brand_story::before {
