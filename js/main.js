@@ -9,16 +9,17 @@ $(window).scroll(function() { //스크롤링이 될 때마다
 
 /* Header */
 $('header').hover(function() { //over
-   // $('.header_left .allmenu_wrap').stop().slideDown();
-   $('header').toggleClass('on')
+   if($(window).width() > 900) {$('header').toggleClass('over')}
 });
-$('.header_left .allmenu_wrap').hover(function() { //out
-   $('.header_left .allmenu_wrap').stop().slideDown();
-   $('header').addClass('on')
-}, function() {
-   $('.header_left .allmenu_wrap').stop().slideUp();
-   $('header').removeClass('on')
-});
+// $('header #gnb li').mouseover(function() { //out
+//    $('header').addClass('on')
+//    $(this).addClass('over')
+// }, function() {
+//    $('header #gnb li').mouseout(function() {
+//       $('header').removeClass('on')
+//       $(this).removeClass('over')
+//    })
+// });
 
 /* Main-visual-Swiper */
 const mainSwiper = new Swiper('.main_swiper', {
@@ -34,31 +35,30 @@ const mainSwiper = new Swiper('.main_swiper', {
    },
 });
 
-// const mainSwiper = new Swiper('.main_swiper', {
-//    effect: 'fade',
-//    loop: true,
-//    autoplay: {
-//       delay: 1000,
-//       disableOnInteraction: false,
-//    },
-//    // pagination: {
-//    //    el: '.swiper-pagination',
-//    //    clickable: true,
-//    // },
-// });
-
 /* Main-product-Swiper */
-const prSwiper = new Swiper('.pr_swiper', {
-   loop: true,
-   autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-   },
-   centeredSlides: true,
-   slidesPerView: 3,
-   spaceBetween: 80,
-   navigation: {
-      nextEl: '.swiper-btn-next',
-      prevEl: '.swiper-btn-prev',
-   },
-})
+function initSwiper() { // Swiper 초기화 함수
+   if ($(window).width() > 768) {
+      prSwiper = new Swiper('.pr_swiper', {
+         loop: true,
+         autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+         },
+         centeredSlides: true,
+         slidesPerView: 3,
+         spaceBetween: 73,
+         navigation: {
+            nextEl: '.swiper-btn-next',
+            prevEl: '.swiper-btn-prev',
+         },
+      });
+   }
+}
+
+initSwiper(); // Swiper 초기화 함수 실행
+
+$(window).resize(function() { // 768px 이상일 때 Swiper 다시 실행
+   if ($(window).width() <= 768) {
+      if (prSwiper) prSwiper.destroy(); // Swiper 비활성화
+   } else {nitSwiper();} // Swiper 활성화
+});
