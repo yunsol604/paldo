@@ -29,6 +29,10 @@ const mainSwiper = new Swiper('.main_swiper', {
       delay: 3000,
       disableOnInteraction: false,
    },
+   navigation: {
+      nextEl: '.swiper-visual-next',
+      prevEl: '.swiper-visual-prev',
+   },
    pagination: {
       el: '.swiper-pagination',
       clickable: true,

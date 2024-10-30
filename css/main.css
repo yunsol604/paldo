@@ -39,6 +39,7 @@
 }
 
 /* Common */
+html {overflow-x: hidden;}
 .screen_out {
    display: block;overflow: hidden;
    width: 0;height: 0;
@@ -190,17 +191,13 @@ footer .sns_wrap {
 .main_visual {
    position: relative;font-family: 'Tenada';
    height: 100vh;width: 100vw;
-   /* background: gold; */
 }
 /* .main_swiper {display: none;} */
 .main_visual .swiper-wrapper {
    height: 100vh;
    position: relative;overflow: hidden;
 }
-.main_visual .swiper-slide {
-   /* position: absolute;left: 0;top: 0; */
-   /* width: 100%;height: 100%; */
-}
+.main_visual .swiper-slide {}
 .main_visual .swiper-slide img {width: 100%;height: 100%;object-fit: cover;}
 /* .main_visual::before {
    content: "";position: absolute;
@@ -214,15 +211,41 @@ footer .sns_wrap {
    text-align: center;line-height: 1.5;
    text-shadow: 0px 0px 10px #333;
 }
+.main_visual .swiper-controls-wrap {z-index: 100;}
+.main_visual .swiper-pagination {
+   display: flex;gap: 5px;justify-content: center;align-items: center;
+   position: absolute;bottom: 30%;left: 50%;
+   transform: translateX(-50%);
+}
+.main_visual .swiper-pagination span {
+   width: 12px;height: 12px;
+   background: none;border: 1px solid #FFF;opacity: 0.8;
+}
+.main_visual .swiper-pagination .swiper-pagination-bullet-active {background: #FFF;}
+
+.main_visual .progress_wrap {
+   position: absolute;left: 50%;top: 50%;
+   transform: translate(-50%, -50%);
+   width: 85%;z-index: 99;opacity: 0.6;
+}
+.main_visual .progress_wrap i {
+   font-size: 60px;color: #FFF;border-radius: 50%;
+}
+
+@keyframes jump {
+   0% {bottom: 8%;}
+   50% {bottom: 7%;}
+   100% {bottom: 8%;}
+}
 .scroll {
    display: flex;flex-direction: column;gap: 3px;
    align-items: center;justify-content: center;
-   position: absolute;left: 50%;bottom: 8%;
+   position: absolute;left: 50%;
    transform: translateX(-50%);
-   width: 100px;height: 120px;
-   font-size: 24px;font-weight: 800;font-family: 'yg-jalnan';
+   width: 80px;height: 100px;animation: jump 1s infinite;
+   font-size: 18px;font-weight: 800;font-family: 'yg-jalnan';
    background: #D93716;color: #FFF;border-radius: 100px;
-   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.3);
+   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.3);z-index: 100;
 }
 
 @media screen and (max-width: 1400px) {
