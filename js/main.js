@@ -1,5 +1,5 @@
 $(window).scroll(function() { //스크롤링이 될 때마다
-   if($(window).scrollTop() >= 800) {
+   if($(window).scrollTop() >= 100) {
       $('header').addClass('on')
    }
    else {
