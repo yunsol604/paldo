@@ -8,9 +8,20 @@ $(window).scroll(function() { //스크롤링이 될 때마다
 })
 
 /* Header */
-$('header').hover(function() { //over
+$('header #gnb').hover(function() { //over
    if($(window).width() > 900) {$('header').toggleClass('over')}
 });
+$('.btn_menu').click(function() {
+   $('header #gnb').hover(function() { //over
+      if($(window).width() > 900) {$('header').addClass('over')}
+      else {$('header').removeClass('over')}
+   });
+   if($(window).width() > 900) {$('header').toggleClass('over')}
+   if($(window).width() < 901) {$('.menu_right').addClass('over')}
+})
+$('.btn_menu_close').click(function() {
+   $('header .menu_right').removeClass('over')
+})
 // $('header #gnb li').mouseover(function() { //out
 //    $('header').addClass('on')
 //    $(this).addClass('over')
@@ -40,29 +51,36 @@ const mainSwiper = new Swiper('.main_swiper', {
 });
 
 /* Main-product-Swiper */
+let prSwiper;
+
 function initSwiper() { // Swiper 초기화 함수
    if ($(window).width() > 768) {
-      prSwiper = new Swiper('.pr_swiper', {
-         loop: true,
-         autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-         },
-         centeredSlides: true,
-         slidesPerView: 3,
-         spaceBetween: 73,
-         navigation: {
-            nextEl: '.swiper-btn-next',
-            prevEl: '.swiper-btn-prev',
-         },
-      });
+      if (!prSwiper) { // Swiper가 아직 초기화되지 않았을 때만 초기화
+         prSwiper = new Swiper('.pr_swiper', {
+            loop: true,
+            autoplay: {
+               delay: 3000,
+               disableOnInteraction: false,
+            },
+            centeredSlides: true,
+            slidesPerView: 3,
+            spaceBetween: 73,
+            navigation: {
+               nextEl: '.swiper-btn-next',
+               prevEl: '.swiper-btn-prev',
+            },
+         });
+      }
+   } else {
+      if (prSwiper) { // 768 이하일 때 Swiper가 초기화된 상태이면 파괴
+         prSwiper.destroy();
+         prSwiper = null; // 인스턴스 참조 제거
+      }
    }
 }
 
 initSwiper(); // Swiper 초기화 함수 실행
 
-$(window).resize(function() { // 768px 이상일 때 Swiper 다시 실행
-   if ($(window).width() <= 768) {
-      if (prSwiper) prSwiper.destroy(); // Swiper 비활성화
-   } else {nitSwiper();} // Swiper 활성화
+$(window).resize(function() {
+   initSwiper(); // 창 크기에 맞게 Swiper 재초기화
 });
