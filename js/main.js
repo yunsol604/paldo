@@ -7,22 +7,27 @@ $(window).scroll(function() { // 스크롤 될 때마다 실행
 });
 
 /* Header */
-$('header #gnb').hover(function() { // 마우스 오버
-   if ($(window).width() > 980) {
+// $().click(function() {})
+// $().hover(function() {},function() {})
+$('header #gnb>li').hover(function() { // 마우스 오버
+   if ($(window).width() > 1018) {
       $('header').addClass('over');
+      $(this).addClass('over');
    }
+}, function() {
+   $(this).removeClass('over');
 });
 
 $('.btn_menu').click(function() {
-   if ($(window).width() > 980) {
+   if ($(window).width() > 1018) {
       $('header').addClass('over');
-   } else if ($(window).width() < 981) {
+   } else if ($(window).width() < 1019) {
       $('.menu_right').addClass('over');
    }
 });
 
 $('header').mouseleave(function() {
-   if ($(window).width() > 980) {
+   if ($(window).width() > 1018) {
       const gnbHover = $('#gnb').is(':hover');
       if (!gnbHover) {
          $('header').removeClass('over');
@@ -62,7 +67,7 @@ const mainSwiper = new Swiper('.main_swiper', {
 let prSwiper;
 
 function initSwiper() { // Swiper 초기화 함수
-   if ($(window).width() > 768) {
+   if ($(window).width() > 837) {
       if (!prSwiper) { // Swiper가 아직 초기화되지 않았을 때만 초기화
          prSwiper = new Swiper('.pr_swiper', {
             loop: true,
