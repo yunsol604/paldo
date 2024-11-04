@@ -34,6 +34,12 @@ $('.btn_menu_close').click(function() {
    $('header .menu_right').removeClass('over');
 });
 
+/* btn_goTop */
+$('.btn_goTop').click(function(e) {
+   e.preventDefault(); // 기본 동작 방지
+   $('html, body').animate({ scrollTop: 0 }, 500);
+});
+
 /* Main-visual-Swiper */
 const mainSwiper = new Swiper('.main_swiper', {
    effect: 'fade',
