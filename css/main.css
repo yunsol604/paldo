@@ -63,19 +63,6 @@ html {overflow-x: hidden;}
    font-size: 50px;text-align: center;
 }
 
-/* @media screen and (min-width: 901px) {
-   header .menu_right.over {left: 70%;}
-} */
-@media screen and (max-width: 900px) { /* 모바일 */
-   .section_title {margin: 120px 0 80px 0;}
-   .section_title h2 {font-size: 35px;}
-   .section_title a {font-size: 40px;}
-   header nav {display: none;}
-   header.over {display: none;}
-   header .container {width: 95%;height: 60px;}
-   header h1 a {width: 100px;}
-}
-
 /* Header */
 header {
    position: fixed;left: 0;right: 0;top: 0;
@@ -177,6 +164,23 @@ header.on, header.over {
 header.over #gnb .gnbName {text-shadow: none;}
 header.on #gnb .gnbName {text-shadow: none;}
 header.over #gnb ul {display: flex;}
+
+@media screen and (max-width: 1200px) {
+   .section_title {margin: 120px 0 80px 0;}
+   .section_title h2 {font-size: 35px;}
+   .section_title a {font-size: 40px;}
+   header .container {width: 95%;height: 90px;}
+   header h1 a {width: 100px;}
+   header .util {font-size: 26px;}
+   header #gnb .gnbName {font-size: 20px;}
+}
+@media screen and (max-width: 980px) {
+   header nav {display: none;}
+   header.over {display: none;}
+}
+@media screen and (max-width: 800px) {
+   header .container {height: 70px;}
+}
 
 /* Footer */
 footer {

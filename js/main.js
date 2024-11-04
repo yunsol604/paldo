@@ -9,15 +9,15 @@ $(window).scroll(function() { //스크롤링이 될 때마다
 
 /* Header */
 $('header #gnb').hover(function() { //over
-   if($(window).width() > 900) {$('header').toggleClass('over')}
+   if($(window).width() > 980) {$('header').toggleClass('over')}
 });
 $('.btn_menu').click(function() {
    $('header #gnb').hover(function() { //over
-      if($(window).width() > 900) {$('header').addClass('over')}
+      if($(window).width() > 981) {$('header').addClass('over')}
       else {$('header').removeClass('over')}
    });
-   if($(window).width() > 900) {$('header').toggleClass('over')}
-   if($(window).width() < 901) {$('.menu_right').addClass('over')}
+   if($(window).width() > 980) {$('header').toggleClass('over')}
+   if($(window).width() < 981) {$('.menu_right').addClass('over')}
 })
 $('.btn_menu_close').click(function() {
    $('header .menu_right').removeClass('over')
