@@ -1,5 +1,5 @@
 $(window).scroll(function() { // 스크롤 될 때마다 실행
-   if($(window).scrollTop() >= 100) {
+   if ($(window).scrollTop() >= 100) {
       $('header').addClass('on');
    } else {
       $('header').removeClass('on');
@@ -8,21 +8,25 @@ $(window).scroll(function() { // 스크롤 될 때마다 실행
 
 /* Header */
 $('header #gnb').hover(function() { // 마우스 오버
-   if($(window).width() > 980) {
+   if ($(window).width() > 980) {
       $('header').addClass('over');
-   }
-});
-$('header #gnb').mouseleave(function() {
-   if($(window).width() > 980) {
-      $('header').removeClass('over');
    }
 });
 
 $('.btn_menu').click(function() {
-   if($(window).width() > 980) {
+   if ($(window).width() > 980) {
       $('header').addClass('over');
-   } else if($(window).width() < 981) {
+   } else if ($(window).width() < 981) {
       $('.menu_right').addClass('over');
+   }
+});
+
+$('header').mouseleave(function() {
+   if ($(window).width() > 980) {
+      const gnbHover = $('#gnb').is(':hover');
+      if (!gnbHover) {
+         $('header').removeClass('over');
+      }
    }
 });
 
@@ -82,4 +86,3 @@ initSwiper(); // Swiper 초기화 함수 실행
 $(window).resize(function() {
    initSwiper(); // 창 크기에 맞게 Swiper 재초기화
 });
-
